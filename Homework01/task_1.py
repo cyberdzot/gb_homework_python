@@ -12,17 +12,17 @@
 # - 7 -> да
 # - 1 -> нет
 
-is_days = [False, False, False, False, False, True, True]
+IS_DAYS = [False, False, False, False, False, True, True]
 
-def IsDayOff(arg):
+def is_day_off(arg):
     if 0 < arg < 8:
-        return is_days[arg - 1]
+        return IS_DAYS[arg - 1]
     return
 
 
 day = int(input('Введите день недели: '))
 
-status = IsDayOff(day)
+status = is_day_off(day)
 
 if status == None:
     print('Такого дня недели не существует!')
