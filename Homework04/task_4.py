@@ -10,6 +10,8 @@
 
 #     a, b, c, d, e, h - рандом
 
+# "значения от 0" - с нулями выражений я не видел, могу ошибаться, поэтому буду делать от 1 до 100
+
 
 import random as rand
 
@@ -18,9 +20,9 @@ def get_polynomial(pow):
     string = ''
 
     for i in range(pow, 1, -1):
-        string += str(rand.randint(0, 99)) + 'x^' + str(i) + ' + '
+        string += str(rand.randint(1, 99)) + 'x^' + str(i) + ' + '
 
-    return string + str(rand.randint(0, 99)) + 'x'
+    return string + str(rand.randint(1, 99)) + 'x + ' + str(rand.randint(1, 99))
 
 
 k = input('Введите степень: ')
