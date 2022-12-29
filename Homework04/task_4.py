@@ -9,3 +9,20 @@
 #     ix^6 + ax^5 + bx^4+ cx^3 + dx^2 + ex + h
 
 #     a, b, c, d, e, h - рандом
+
+
+import random as rand
+
+
+def get_polynomial(pow):
+    string = ''
+
+    for i in range(pow, 1, -1):
+        string += str(rand.randint(0, 99)) + 'x^' + str(i) + ' + '
+
+    return string + str(rand.randint(0, 99)) + 'x'
+
+
+k = input('Введите степень: ')
+k = int(k)
+print(get_polynomial(k))
