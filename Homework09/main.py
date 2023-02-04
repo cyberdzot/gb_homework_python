@@ -10,14 +10,14 @@ from telegram import Bot
 from telegram.ext import Updater, MessageHandler, Filters
 
 # токен бота
-bot_token = ''
+BOT_TOKEN = ''
 
 # набор букв для поиска
-value_for_del = 'абв'
+VALUE_FOR_DEL = 'абв'
 
 
-bot = Bot(token=bot_token)
-updater = Updater(token=bot_token)
+bot = Bot(token=BOT_TOKEN)
+updater = Updater(token=BOT_TOKEN)
 dispatcher = updater.dispatcher
 
 
@@ -25,7 +25,7 @@ def is_sym_in_text(update, context):
     text = update.message.text
     words = text.split()
     for value in words:
-        if value_for_del in value:
+        if VALUE_FOR_DEL in value:
             words.remove(value)
     context.bot.send_message(update.effective_chat.id, ' '.join(words))
 
